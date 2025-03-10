@@ -1,0 +1,36 @@
+﻿@model IEnumerable<INF272___Practical_2__Kukhanya_Study_Group_New_Layout_.Models.StudyGroupPeople>
+
+@{
+    ViewBag.Title = "List of People";
+}
+
+<h2>List of People</h2>
+<table class="table">
+    <tr>
+        <th> @Html.DisplayNameFor(model => model.StudentNumber) </th>
+
+        <th> @Html.DisplayNameFor(model => model.Name) </th>
+
+        <th> @Html.DisplayNameFor(model => model.Surname) </th>
+
+        <th> @Html.DisplayNameFor(model => model.EmailAddress) </th>
+
+        <th> @Html.DisplayNameFor(model => model.MyLink) </th>
+    </tr>
+
+    @foreach (var item in Model) //For each person
+    {
+        <tr>
+            <td> @Html.DisplayFor(modelItem => item.StudentNumber) </td>
+
+            <td> @Html.DisplayFor(modelItem => item.Name) </td>
+
+            <td> @Html.DisplayFor(modelItem => item.Surname) </td>
+
+            <td> @Html.DisplayFor(modelItem => item.EmailAddress) </td>
+
+            <td><a href="@Url.Content(item.MyLink)" class="btn btn-primary">LINK</a></td>
+        </tr>
+    }
+
+</table>
